@@ -1,0 +1,201 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.sidebar .nav-icon {
+  width: 40px; /* Ensure consistent size for sidebar icons */
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  display: flex;
+  align-items: center;  /* Vertically align the icon and text */
+  justify-content: flex-start; /* Align to the left */
+  margin-bottom: 15px;  /* Space between each menu item */
+  font-size: 18px; /* Font size */
+  color: #333; /* Text color */
+  border-radius: 15px;  /* Rounded corners */
+  padding: 10px 20px;  /* Ensure even padding on both sides */
+  transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease; /* Smooth hover effect */
+  cursor: pointer;  /* Ensure pointer cursor on hover */
+}
+
+.sidebar ul li a {
+  text-decoration: none;  /* Remove underline from anchor */
+  color: inherit; /* Ensure text color stays the same as the parent */
+  width: 100%; /* Make the entire area clickable */
+  display: flex; /* Allow anchor tag to cover the entire li */
+  align-items: center; /* Keep icon and text vertically aligned */
+}
+
+.sidebar ul li:hover {
+  background-color: #FFB6C1;  /* Peachy-pink background on hover */
+  color: #fff; /* White text color */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 25px;  /* More rounded corners on hover */
+}
+
+.sidebar ul li img {
+  width: 20px; /* Icon size */
+  margin-right: 15px; /* Space between icon and text */
+  transition: filter 0.3s ease; /* Smooth transition for icon color change */
+}
+
+.sidebar ul li:hover img {
+  filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(300%) hue-rotate(180deg); /* Change icon color */
+}
+
+
+/* Settings item hover effect */
+.sidebar .settings-item {
+  display: flex;
+  align-items: center;
+  margin-top: 25px; /* Ensures space between the line and settings */
+  border-radius: 15px; /* Apply rounded corners to settings item */
+  transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease; /* Smooth transition */
+}
+
+.sidebar .settings-item:hover {
+  background-color: #FFB6C1; /* Peachy-pink background on hover */
+  color: white; /* Text color turns white */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 25px; /* More rounded corners on hover for the hover effect */
+}
+
+.sidebar .settings-item img {
+  width: 20px; /* Consistent size for settings icon */
+  margin-right: 10px; /* Space between icon and text */
+  transition: filter 0.3s ease; /* Smooth transition for icon color */
+}
+
+.sidebar .settings-item:hover img {
+  filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(300%) hue-rotate(180deg); /* Change icon color */
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #f4a6a6; /* Peachy-pink border */
+  border-radius: 25px; /* Rounded edges for a more pill-shaped look */
+  background-color: #ffe6e6; /* Light peachy-pink background */
+  color: #333; /* Text color */
+  font-size: 16px; /* Optional, for adjusting text size */
+  margin: 0 auto;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.search-bar:hover {
+  background-color: #ffe6e6; /* Change background color on hover */
+  border-color: #FFB6C1; /* Change border color on hover */
+}
+
+.user-settings .icon {
+  width: 25px; /* Consistent size for settings and notifications icons */
+  margin-left: 10px;
+  transition: transform 0.3s ease; /* Smooth transition for icon scaling */
+}
+
+.user-settings .icon:hover {
+  transform: scale(1.2); /* Scale up the icons on hover */
+}
+
+/* Dashboard Hover Effect */
+.dashboard h1 {
+  margin-bottom: 20px;
+}
+
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Display property cards in 2 columns */
+  gap: 20px;
+}
+
+.property-card {
+  border: 1px solid #494949;
+  border-radius: 5px;
+  overflow: hidden;
+  max-width: 100%; /* Prevent cards from expanding too wide */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for card hover effects */
+}
+
+.property-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+  transform: translateY(-5px); /* Slightly lift the card on hover */
+}
+
+.property-card img {
+  width: 100%; /* Make sure the image fits within the card */
+  height: auto; /* Adjust height to maintain the aspect ratio */
+  max-height: 250px; /* Limit the height to avoid too large images */
+  object-fit: cover; /* Crop the image to fit within the height/width */
+}
+
+.property-card .details {
+  padding: 10px;
+}
+
+.property-card .details p {
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.property-card .details img {
+  width: 20px; /* Consistent size for bedroom and washroom icons */
+  height: 20px; /* Ensure icons maintain a square aspect ratio */
+  margin-right: 10px; /* Increased margin for more space */
+  padding: 5px; /* Added padding inside icons */
+  transition: transform 0.3s ease; /* Smooth transition for icon hover effect */
+}
+
+.property-card .details img:hover {
+  transform: scale(1.1); /* Slightly enlarge the icons on hover */
+}
+
+/* Add more space between the icons and numbers */
+.property-card .details p span {
+  margin-left: 10px; /* Adds space between icon and the number */
+}
+
+.property-details .icon {
+  border: 1px solid #a3a3a3; /* Subtle grey border */
+  border-radius: 8px;       /* Rounded corners */
+  padding: 3px;             /* Space inside the border */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  width: 50px;              /* Control size of the icons */
+  height: 50px;             /* Maintain aspect ratio */
+}
+
+.property-details .icon:hover {
+  transform: scale(1.2); /* Scale up the property detail icons on hover */
+}

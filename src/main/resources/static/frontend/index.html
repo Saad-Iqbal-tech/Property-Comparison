@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ValuePro AI | Dashboard</title>
+  <link rel="stylesheet" href="css/stylesheet.css">
+  <style>
+    /* Styling for ValuePro AI text in the sidebar */
+    .sidebar .brand {
+      font-size: 24px;
+      font-weight: bold;
+      color: #FFB6C1; /* Peachy-pink color */
+      margin-bottom: 20px; /* Spacing below the brand */
+      text-align: center; /* Center align the brand name */
+      font-family: 'Arial', sans-serif; /* Optional: to match the website's font */
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #f8f9fa;
+      padding: 20px;
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .sidebar ul li img {
+      width: 20px;
+      margin-right: 10px;
+    }
+
+    /* Styling for the Feedback link and the line */
+    .sidebar ul li:last-child {
+      margin-bottom: 25px; /* Ensure space below the last nav item */
+    }
+
+    .sidebar .line {
+      width: 100%;
+      height: 1px;
+      background-color: #dcdcdc; /* Light gray line */
+      margin-top: 25px; /* Distance from the last navigation item */
+      margin-bottom: 25px; /* Space before the settings icon */
+    }
+
+    /* Styling for the Settings icon and text */
+    .sidebar .settings-item {
+      display: flex;
+      align-items: center;
+      margin-top: 25px; /* Ensures space between the line and settings */
+    }
+
+    .sidebar .settings-item img {
+      width: 20px; /* Consistent size for settings icon */
+      margin-right: 10px; /* Space between icon and text */
+    }
+
+    .sidebar .settings-item span {
+      font-size: 18px; /* Same font size as the other items */
+      color: #333; /* Same color as other items */
+      padding: 25px;
+    }
+
+    /* Additional styling for property icons */
+    .property-card img.icon {
+      width: 20px;
+      height: auto;
+      border: 1px solid #080808;
+      border-radius: 5px;
+      padding: 2px;
+      margin-right: 35px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="brand">ValuePro AI</div>
+      <ul>
+        <li><img src="res/Dashboard.png" alt="Dashboard Icon"> Dashboard</li>
+        <li><img src="res/Analysis Icon.png" alt="Analysis Icon"> Analysis</li>
+        <li><img src="res/transaction icon.webp" alt="Transaction Icon"> Transactions</li>
+        <li><img src="res/Feedback icon.png" alt="Feedback Icon"> Feedback</li>
+        <!-- Update the Filter Properties to be clickable across the whole item -->
+        <li>
+          <a href="FilterProperties.html" class="filter-link">
+            <img src="res/propertyIcon_for_nav_bar.png" alt="Property Icon">
+            <span>Filter Properties</span>
+          </a>
+        </li>
+      </ul>
+      
+      
+
+      <!-- Line below the last navigation item -->
+      <div class="line"></div>
+
+      <!-- Settings icon and text below the line -->
+      <div class="settings-item">
+        <img src="res/settings.png" alt="Settings Icon" class="icon">
+        <span>Settings</span>
+      </div>
+    </aside>
+
+    <main>
+      <header>
+        <input type="text" class="search-bar" placeholder="Search">
+        <div class="user-settings">
+          <img src="res/settings.png" alt="Settings Icon" class="icon">
+          <img src="res/Feedback icon.png" alt="Notifications Icon" class="icon">
+        </div>
+      </header>
+      <section class="dashboard">
+        <h1>Dashboard</h1>
+        <div class="properties-grid">
+          <div class="property-card">
+            <img src="res/property1.jpg" alt="Modern Simple House">
+            <div class="details">
+              <p>Modern Simple House</p>
+              <p>
+                <img src="res/bedrooms.png" alt="Bedrooms" class="icon"> 4 
+                <img src="res/washrooms.png" alt="Washrooms" class="icon"> 2
+              </p>
+            </div>
+          </div>
+          <div class="property-card">
+            <img src="res/property2.jpeg" alt="Luxury Villa">
+            <div class="details">
+              <p>Luxury Villa</p>
+              <p>
+                <img src="res/bedrooms.png" alt="Bedrooms" class="icon"> 5            
+                <img src="res/washrooms.png" alt="Washrooms" class="icon"> 3        
+              </p>
+            </div>
+          </div>
+          <div class="property-card">
+            <img src="res/property3.jpg" alt="Classic House">
+            <div class="details">
+              <p>Classic House</p>
+              <p>
+                <img src="res/bedrooms.png" alt="Bedrooms" class="icon"> 3 
+                <img src="res/washrooms.png" alt="Washrooms" class="icon"> 2
+              </p>
+            </div>
+          </div>
+          <div class="property-card">
+            <img src="res/property4.jpeg" alt="Family Home">
+            <div class="details">
+              <p>Family Home</p>
+              <p>
+                <img src="res/bedrooms.png" alt="Bedrooms" class="icon"> 4 
+                <img src="res/washrooms.png" alt="Washrooms" class="icon"> 3
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

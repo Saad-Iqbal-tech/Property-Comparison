@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ValuePro AI | Filter Properties</title>
+  <link rel="stylesheet" href="css/stylesheet.css">
+  <style>
+    /* Global Styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      display: flex;
+      flex-grow: 1;
+    }
+
+    /* Sidebar Styling */
+    .sidebar {
+      width: 250px;
+      background-color: #f8f9fa;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      transition: transform 0.3s ease; /* Smooth transition for sidebar hiding/showing */
+      padding-top: 60px; /* Adjust padding to accommodate the toggle button */
+    }
+
+    .sidebar .brand {
+      font-size: 24px;
+      font-weight: bold;
+      color: #FFB6C1; /* Peachy-pink color */
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .sidebar ul li img {
+      width: 20px;
+      margin-right: 10px;
+    }
+
+    .sidebar .line {
+      width: 100%;
+      height: 1px;
+      background-color: #dcdcdc;
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+
+    /* Hide Sidebar */
+    .sidebar.hidden {
+      transform: translateX(-100%);  /* Move the sidebar out of view */
+    }
+
+    /* Toggle Button */
+    .toggle-button {
+      position: fixed;
+      top: 20px;  /* Position the button 20px from the top */
+      left: 20px;  /* Position the button 20px from the left */
+      cursor: pointer;
+      z-index: 10;  /* Ensure the button is clickable above the sidebar */
+      width: 50px;  /* Set the width of the button */
+      height: 50px; /* Set the height of the button */
+    }
+
+    /* Main Content */
+    main {
+      margin-left: 250px;
+      padding: 20px;
+      background-color: #fff;
+      flex-grow: 1;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    /* Move the Filter Properties heading to the right */
+    header h1 {
+      margin-left: 20px; /* Adjust the value here as per your requirement */
+    }
+
+    /* Filter Form Styling */
+    .filter-form {
+      background-color: #ffe6e6; /* Light peachy-pink */
+      padding: 45px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .filter-form h2 {
+      text-align: center;
+      color: #FFB6C1; /* Peachy-pink */
+    }
+
+    .filter-form label {
+      font-size: 16px;
+      margin-top: 10px;
+      display: block;
+      color: #333;
+    }
+
+    .filter-form select,
+    .filter-form input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #dcdcdc;
+    }
+
+    .filter-form input[type="range"] {
+      width: 100%;
+    }
+
+    .filter-form button {
+      background-color: #FFB6C1; /* Peachy-pink */
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .filter-form button:hover {
+      background-color: #ff99b2; /* Slightly darker peach */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">ValuePro AI</div>
+      <ul>
+        <li><a href ="index.html"><img src="res/Dashboard.png" alt="Dashboard Icon"> Dashboard</a></li>
+        <li><img src="res/Analysis Icon.png" alt="Analysis Icon"> Analysis</li>
+        <li><img src="res/transaction icon.webp" alt="Transaction Icon"> Transactions</li>
+        <li><img src="res/Feedback icon.png" alt="Feedback Icon"> Feedback</li>
+        <li><img src="res/propertyIcon_for_nav_bar.png" alt="Property Icon"> Filter Properties</li>
+      </ul>
+
+      <!-- Line below the last navigation item -->
+      <div class="line"></div>
+
+      <!-- Settings icon and text below the line -->
+      <div class="settings-item">
+        <img src="res/settings.png" alt="Settings Icon" class="icon">
+        <span>Settings</span>
+      </div>
+    </aside>
+
+    <!-- Toggle Button (hide/show navbar) -->
+    <img src="res/hideButton.png" alt="Toggle Sidebar" class="toggle-button" id="toggleButton">
+
+    <!-- Main content -->
+    <main>
+      <header>
+        <h1>Filter Properties</h1>
+      </header>
+
+      <!-- Filter Form -->
+      <div class="filter-form">
+        <h2>Apply Filters</h2>
+
+        <label for="city">Select City</label>
+        <select id="city">
+          <option value="Lahore">Lahore</option>
+          <option value="Karachi">Karachi</option>
+          <option value="Islamabad">Islamabad</option>
+          <option value="Rawalpindi">Rawalpindi</option>
+          <option value="Gujranwala">Gujranwala</option>
+          <option value="Attock">Attock</option>
+        </select>
+
+        <label for="rooms">Number of Rooms</label>
+        <input type="range" id="rooms" min="1" max="7" step="1" value="3">
+        <div>Rooms: <span id="room-count">3</span></div>
+
+        <label for="washrooms">Number of Washrooms</label>
+        <input type="range" id="washrooms" min="1" max="4" step="1" value="2">
+        <div>Washrooms: <span id="washroom-count">2</span></div>
+
+        <label for="price">Price Range</label>
+        <input type="range" id="price" min="1000000" max="5000000" step="500000" value="3000000">
+        <div>Price: <span id="price-value">3,000,000</span></div>
+
+        <button type="submit">Apply Filters</button>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Toggle the visibility of the sidebar on button click
+    const sidebar = document.querySelector('.sidebar');
+    const toggleButton = document.getElementById('toggleButton');
+
+    toggleButton.addEventListener('click', () => {
+      sidebar.classList.toggle('hidden');
+    });
+
+    // Update range values dynamically
+    const roomSlider = document.getElementById('rooms');
+    const washroomSlider = document.getElementById('washrooms');
+    const priceSlider = document.getElementById('price');
+
+    const roomCount = document.getElementById('room-count');
+    const washroomCount = document.getElementById('washroom-count');
+    const priceValue = document.getElementById('price-value');
+
+    roomSlider.addEventListener('input', function() {
+      roomCount.textContent = roomSlider.value;
+    });
+
+    washroomSlider.addEventListener('input', function() {
+      washroomCount.textContent = washroomSlider.value;
+    });
+
+    priceSlider.addEventListener('input', function() {
+      priceValue.textContent = priceSlider.value.toLocaleString();
+    });
+  </script>
+</body>
+</html>
